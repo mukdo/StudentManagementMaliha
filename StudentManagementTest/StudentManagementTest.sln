@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementTest.Web", "StudentManagementTest.Web\StudentManagementTest.Web.csproj", "{2637874C-745D-4A74-9852-287E6BE77D8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagementTest.Web", "StudentManagementTest.Web\StudentManagementTest.Web.csproj", "{2637874C-745D-4A74-9852-287E6BE77D8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementTest.Data", "StudentManagementTest.Data\StudentManagementTest.Data.csproj", "{7A3E4F2B-DCC3-4455-8CF4-352F33069C88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagementTest.Data", "StudentManagementTest.Data\StudentManagementTest.Data.csproj", "{7A3E4F2B-DCC3-4455-8CF4-352F33069C88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementTest.Library", "StudentManagementTest.Library\StudentManagementTest.Library.csproj", "{6AB6518C-AFDA-45E8-95C4-AF694599D070}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagementTest.Library", "StudentManagementTest.Library\StudentManagementTest.Library.csproj", "{6AB6518C-AFDA-45E8-95C4-AF694599D070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementTest.MemberShip", "StudentManagementTest.MemberShip\StudentManagementTest.MemberShip.csproj", "{A1C96921-9348-444C-BCAC-070E822F6ED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6AB6518C-AFDA-45E8-95C4-AF694599D070}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB6518C-AFDA-45E8-95C4-AF694599D070}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB6518C-AFDA-45E8-95C4-AF694599D070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C96921-9348-444C-BCAC-070E822F6ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C96921-9348-444C-BCAC-070E822F6ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C96921-9348-444C-BCAC-070E822F6ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C96921-9348-444C-BCAC-070E822F6ED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
