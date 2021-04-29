@@ -1,22 +1,28 @@
 ﻿using StudentManagementTest.Data;
-
+using StudentManagementTest.Library.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace StudentManagementTest.Framework
 {
-    public class BlogUnitOfWork : UnitOfWork, IBlogUnitOfWork
+    public class SMUnitOfWork : UnitOfWork, ISMUnitOfWork
     {
-       // public ICommentRepository CommentRepository { get; set; }
+        public IStudentRepository StudentRepository { get; set; }
+        public ICourseRepository CourseRepository { get; set; }
+        public IStudentRegistrationRepository StudentRegistrationRepository { get; set; }
 
-        public BlogUnitOfWork( SMDbContext frameworkContext )// , ICategoryRepository categoryRepository, 
-                                                                 // ICommentRepository  commentRepository,
-                                                                //  IBlogComposeRepository composeRepository)
+
+        public SMUnitOfWork( SMDbContext frameworkContext  , IStudentRepository studentRepository,
+                                                             ICourseRepository courseRepository, 
+                                                             IStudentRegistrationRepository studentRegistrationRepository)
             :base(frameworkContext)
         {
-            //CategoryRepository = categoryRepository;
+            StudentRepository = studentRepository;
+            CourseRepository = courseRepository;
+            StudentRegistrationRepository = studentRegistrationRepository;
          
         }
-    }
+
+       }
 }
