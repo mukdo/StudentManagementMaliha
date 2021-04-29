@@ -2,6 +2,8 @@
 using StudentManagementTest.Data;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using System;
+using StudentManagementTest.Library.Repository;
+using StudentManagementTest.MemberShip.Contexts;
 
 namespace StudentManagementTest.Framework
 {
@@ -23,40 +25,16 @@ namespace StudentManagementTest.Framework
                 .WithParameter("migrationAssemblyName", _migrationAssemblyName)
                 .InstancePerLifetimeScope();
 
-            //builder.RegisterType<ApplicationDbContext>()
-            //    .WithParameter("connectionString", _connectionString)
-            //    .WithParameter("migrationAssemblyName", _migrationAssemblyName)
-            //    .InstancePerLifetimeScope();
+            builder.RegisterType<ApplicationDbContext>()
+                .WithParameter("connectionString", _connectionString)
+                .WithParameter("migrationAssemblyName", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
 
-            //builder.RegisterType<BlogUnitOfWork>().As<IBlogUnitOfWork>()
-            //    .InstancePerLifetimeScope();
+            builder.RegisterType<SMUnitOfWork>().As<ISMUnitOfWork>()
+                .InstancePerLifetimeScope();
 
-            //builder.RegisterType<CategoryRepository>().As<ICategoryRepository>()
-            //    .InstancePerLifetimeScope();
-
-            //builder.RegisterType<CategoryService>().As<ICategoryService>()
-            //    .InstancePerLifetimeScope();
-
-            //builder.RegisterType<BlogComposeRepository>().As<IBlogComposeRepository>();
-            //.InstancePerLifetimeScope();
-
-            //builder.RegisterType<BlogComposeService>().As<IBlogComposeService>();
-                //.InstancePerLifetimeScope();
-
-           // builder.RegisterType<CommentRepository>().As<ICommentRepository>()
-           //    .InstancePerLifetimeScope();
-
-           // builder.RegisterType<CommentService>().As<ICommentService>()
-           //     .InstancePerLifetimeScope();
-
-           // builder.RegisterType<AccountSeed>()
-           //     .InstancePerLifetimeScope();
-
-           // builder.RegisterType<UserService>().As<IUserService>()
-           //   .InstancePerLifetimeScope();
-
-           // builder.RegisterType<CurrentUserService>().As<ICurrentUserService>()
-           //.InstancePerLifetimeScope();
+            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
+                .InstancePerLifetimeScope();
 
 
             base.Load(builder);
