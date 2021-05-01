@@ -11,11 +11,11 @@ namespace StudentManagementTest.Library.Entity
         public int Id { get; set; }
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
 
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
         public DateTime EnrollDate { get; set; }
         public bool IspaymentComplete { get; set; }
     }

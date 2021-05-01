@@ -6,6 +6,7 @@ using StudentManagementTest.Web.Areas.Admin.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using StudentManagementTest.Framework;
 
 namespace StudentManagementTest.Web.Areas.Admin.Controllers
 {
@@ -13,11 +14,15 @@ namespace StudentManagementTest.Web.Areas.Admin.Controllers
   //  [Authorize(Roles = "SuperAdmin,Administrator")]
     public class DashboardController : Controller
     {
-       
+        private SMDbContext _sMDbContext;
+        public DashboardController(SMDbContext sMDbContext)
+        {
+            _sMDbContext = sMDbContext;
+        }
         public IActionResult Index()
         {
-            
             var model = new DashBoardModel();
+            ViewBag.Count = _sMDbContext.StudentRegistrations.Count();
             return View(model);
 
         } 

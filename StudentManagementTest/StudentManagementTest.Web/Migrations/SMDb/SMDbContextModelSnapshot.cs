@@ -91,13 +91,13 @@ namespace StudentManagementTest.Web.Migrations.SMDb
                     b.HasOne("StudentManagementTest.Library.Entity.Course", "Course")
                         .WithMany("StudentRegistrations")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("StudentManagementTest.Library.Entity.Student", "Student")
                         .WithMany("StudentRegistrations")
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

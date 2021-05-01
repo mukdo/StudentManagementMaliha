@@ -1,4 +1,7 @@
 ﻿using Autofac;
+using StudentManagementTest.Web.Areas.Admin.Models.Course;
+using StudentManagementTest.Web.Areas.Admin.Models.Student;
+using StudentManagementTest.Web.Areas.Admin.Models.StudentRegistrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +23,9 @@ namespace StudentManagementTest.Web
         protected override void Load(ContainerBuilder builder)
         {
            
-            //builder.RegisterType<UserModel>();
+            builder.RegisterType<StudentModel>();
+            builder.RegisterType<CourseModel>();
+            builder.RegisterType<StudentRegistrationModel>();
 
             base.Load(builder);
         }

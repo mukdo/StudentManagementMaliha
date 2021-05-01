@@ -17,5 +17,6 @@ namespace StudentManagementTest.Library.Service
         StudentRegistration DeleteRegistration(int Id);
         IList<Student> GetStudents();
         IList<Course> GetCourses();
+        int Count();
     }
 }

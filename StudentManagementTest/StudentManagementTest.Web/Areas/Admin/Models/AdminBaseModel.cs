@@ -63,32 +63,33 @@ namespace StudentManagementTest.Web.Areas.Admin.Models
                     },
                     new MenuItem
                     {
-                        Title = "View Comment",
+                        Title = "Student",
                         Childs = new List<MenuChildItem>
                         {
-                            new MenuChildItem{ Title = "Comment", Url = "/Admin/Comment" }
+                            new MenuChildItem{ Title = "View Student", Url = "/Admin/Student" },
+                            new MenuChildItem{ Title = "Add Student", Url = "/Admin/Student/CreateStudent" }
 
                         }
 
                     },
                     new MenuItem
                     {
-                        Title = "Category",
+                        Title = "Course",
                         Childs = new List<MenuChildItem>
                         {
-                            new MenuChildItem{ Title = "View Category", Url = "/Admin/Category" },
-                            new MenuChildItem{ Title = "Add Category", Url ="/Admin/Category/CreateCategory"}
+                            new MenuChildItem{ Title = "View Course", Url = "/Admin/Course/" },
+                            new MenuChildItem{ Title = "Add Course", Url ="/Admin/Course/CreateCourse"}
                                 
                         }
 
                     },
                     new MenuItem
                     {
-                        Title = "Blog Compose",
+                        Title = "Student Registration",
                         Childs = new List<MenuChildItem>
                         {
-                            new MenuChildItem{ Title = "View Post", Url = "/Admin/BlogCompose" },
-                            new MenuChildItem{ Title = "Add Post", Url ="/Admin/BlogCompose/CreatePost"}
+                            new MenuChildItem{ Title = "View Registration", Url = "/Admin/StudentRegistration" },
+                            new MenuChildItem{ Title = "Add Registration", Url ="/Admin/StudentRegistration/CreateRegistration"}
 
                         }
 

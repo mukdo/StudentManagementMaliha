@@ -54,14 +54,14 @@ namespace StudentManagementTest.Web.Migrations.SMDb
                         name: "FK_StudentRegistrations_Course_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Course",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id"
+                        /*onDelete: ReferentialAction.Cascade*/);
                     table.ForeignKey(
                         name: "FK_StudentRegistrations_Student_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Student",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id"
+                        /*onDelete: ReferentialAction.Cascade*/);
                 });
 
             migrationBuilder.CreateIndex(

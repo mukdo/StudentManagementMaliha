@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using System;
 using StudentManagementTest.Library.Repository;
 using StudentManagementTest.MemberShip.Contexts;
+using StudentManagementTest.Library.Service;
 
 namespace StudentManagementTest.Framework
 {
@@ -36,16 +37,20 @@ namespace StudentManagementTest.Framework
             builder.RegisterType<StudentRepository>().As<IStudentRepository>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
+            builder.RegisterType<CourseRepository>().As<ICourseRepository>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
+            builder.RegisterType<StudentRegistrationRepository>().As<IStudentRegistrationRepository>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
+            builder.RegisterType<StudentService>().As<IStudentService>();
+                //.InstancePerLifetimeScope();
+
+            builder.RegisterType<CourseService>().As<ICourseService>()
                 .InstancePerLifetimeScope();
 
-
+            builder.RegisterType<StudentRegistrationService>().As<IStudentRegistrationService>()
+                .InstancePerLifetimeScope();
 
             base.Load(builder);
         }
