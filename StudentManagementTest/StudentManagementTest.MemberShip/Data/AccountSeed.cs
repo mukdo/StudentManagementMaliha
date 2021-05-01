@@ -25,7 +25,7 @@ namespace StudentManagementTest.MemberShip.Data
             _userManager = userManager; 
             _roleManager = roleManager;
 
-            _superAdminUser = new ApplicationUser("superadmin", "Sabbir Islam Mukdo", "8801781831484", "bmukdo@gmail.com");
+            _superAdminUser = new ApplicationUser("superadmin", "Sabbir Islam Mukdo", "8801628504000", "bmukdo@gmail.com");
             _adminUser = new ApplicationUser("admin", "Sabbir Islam Mukdo", "8801781831484", "mukdo@gmail.com");
            
 
@@ -61,7 +61,7 @@ namespace StudentManagementTest.MemberShip.Data
 
             if ((await _userManager.FindByNameAsync(_adminUser.UserName.ToUpper())) == null)
             {
-                result = await _userManager.CreateAsync(_adminUser, "Password@2020");
+                result = await _userManager.CreateAsync(_adminUser, "Maliha@123");
                 if (result.Succeeded)
                 {
                     if (await CheckAndCreateRoleAsync(_adminRole))
