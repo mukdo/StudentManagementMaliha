@@ -11,7 +11,7 @@ using StudentManagementTest.Framework;
 namespace StudentManagementTest.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-  //  [Authorize(Roles = "SuperAdmin,Administrator")]
+    [Authorize(Roles = "SuperAdmin,Administrator")]
     public class DashboardController : Controller
     {
         private SMDbContext _sMDbContext;
@@ -21,8 +21,11 @@ namespace StudentManagementTest.Web.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.countStudent = _sMDbContext.Students.Count();
+            ViewBag.countCourse = _sMDbContext.Courses.Count();
+            ViewBag.countStudentRegistration = _sMDbContext.StudentRegistrations.Count();
             var model = new DashBoardModel();
-            ViewBag.Count = _sMDbContext.StudentRegistrations.Count();
+            
             return View(model);
 
         } 

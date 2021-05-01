@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentManagementTest.Framework;
 using StudentManagementTest.MemberShip.Contexts;
+using StudentManagementTest.MemberShip.Data;
 using StudentManagementTest.MemberShip.Entities;
 using StudentManagementTest.MemberShip.Services;
 using System;
@@ -107,7 +108,7 @@ namespace StudentManagementTest.Web
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AccountSeed accountSeed)
         {
             AutofacContainer = app.ApplicationServices.GetAutofacRoot();
             if (env.IsDevelopment())
@@ -141,6 +142,9 @@ namespace StudentManagementTest.Web
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            accountSeed.MigrateAsync().Wait();
+            accountSeed.SeedAsync().Wait();
         }
     }
 }

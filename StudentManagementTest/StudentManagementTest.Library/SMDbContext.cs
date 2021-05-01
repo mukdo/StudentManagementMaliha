@@ -36,9 +36,9 @@ namespace StudentManagementTest.Framework
             base.OnModelCreating(builder);
         }
 
-       // public DbSet<Course> Courses { get; set; }
-       // public DbSet<Student> Students { get; set; }
-       public DbSet<StudentRegistration> StudentRegistrations { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Student> Students { get; set; }
+       public virtual DbSet<StudentRegistration> StudentRegistrations { get; set; }
 
     
 

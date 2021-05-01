@@ -37,7 +37,7 @@ namespace StudentManagementTest.Web.Migrations.SMDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Course");
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("StudentManagementTest.Library.Entity.Student", b =>
@@ -55,7 +55,7 @@ namespace StudentManagementTest.Web.Migrations.SMDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("Student");
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("StudentManagementTest.Library.Entity.StudentRegistration", b =>
@@ -91,13 +91,13 @@ namespace StudentManagementTest.Web.Migrations.SMDb
                     b.HasOne("StudentManagementTest.Library.Entity.Course", "Course")
                         .WithMany("StudentRegistrations")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("StudentManagementTest.Library.Entity.Student", "Student")
                         .WithMany("StudentRegistrations")
                         .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

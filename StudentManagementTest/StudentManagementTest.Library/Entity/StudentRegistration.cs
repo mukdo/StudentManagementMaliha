@@ -14,7 +14,6 @@ namespace StudentManagementTest.Library.Entity
         public virtual Student Student { get; set; }
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
-
         public virtual Course Course { get; set; }
         public DateTime EnrollDate { get; set; }
         public bool IspaymentComplete { get; set; }

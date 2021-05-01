@@ -5,6 +5,8 @@ using System;
 using StudentManagementTest.Library.Repository;
 using StudentManagementTest.MemberShip.Contexts;
 using StudentManagementTest.Library.Service;
+using StudentManagementTest.MemberShip.Data;
+using StudentManagementTest.MemberShip.Services;
 
 namespace StudentManagementTest.Framework
 {
@@ -51,6 +53,15 @@ namespace StudentManagementTest.Framework
 
             builder.RegisterType<StudentRegistrationService>().As<IStudentRegistrationService>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<AccountSeed>()
+             .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserService>().As<IUserService>()
+              .InstancePerLifetimeScope();
+
+            builder.RegisterType<CurrentUserService>().As<ICurrentUserService>()
+           .InstancePerLifetimeScope();
 
             base.Load(builder);
         }

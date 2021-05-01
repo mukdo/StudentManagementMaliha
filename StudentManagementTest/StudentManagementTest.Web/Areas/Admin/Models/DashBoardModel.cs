@@ -21,7 +21,7 @@ namespace StudentManagementTest.Web.Areas.Admin.Models
 
         public int count()
         {
-         
+        
                 var count = _studentRegistrationService.Count();
             return count;
         }
