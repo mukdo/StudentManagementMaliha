@@ -23,7 +23,7 @@ namespace StudentManagementTest.Web.Areas.Admin.Controllers
         {
             ViewBag.countStudent = _sMDbContext.Students.Count();
             ViewBag.countCourse = _sMDbContext.Courses.Count();
-            ViewBag.countStudentRegistration = _sMDbContext.StudentRegistrations.Count();
+           // ViewBag.countStudentRegistration = _sMDbContext.StudentRegistrations.Count();
             var model = new DashBoardModel();
             
             return View(model);

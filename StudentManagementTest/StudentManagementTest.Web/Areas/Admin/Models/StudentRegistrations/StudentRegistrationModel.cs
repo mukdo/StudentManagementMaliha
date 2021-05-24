@@ -22,7 +22,7 @@ namespace StudentManagementTest.Web.Areas.Admin.Models.StudentRegistrations
                                   dataTables.PageIndex,
                                    dataTables.PageSize,
                                   dataTables.SearchText,
-                                  dataTables.GetSortText(new string[] { "Id", "StudentId", "CourseId" , "EnrollDate" ,"PaymentStutas" }));
+                                  dataTables.GetSortText(new string[] { "StudentId", "CourseId", "Course", "EnrollDate" ,"PaymentStutas", "Id" }));
             return new
             {
                 recordsTotal = data.total,
@@ -32,6 +32,7 @@ namespace StudentManagementTest.Web.Areas.Admin.Models.StudentRegistrations
                         {
                                 record.StudentId.ToString(),
                                 record.CourseId.ToString(),
+                                record.Course.Title,
                                 record.EnrollDate.ToString(),
                                 record.IspaymentComplete.ToString(),
                                 record.Id.ToString()

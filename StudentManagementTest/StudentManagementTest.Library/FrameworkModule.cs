@@ -45,8 +45,8 @@ namespace StudentManagementTest.Framework
             builder.RegisterType<StudentRegistrationRepository>().As<IStudentRegistrationRepository>()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterType<StudentService>().As<IStudentService>();
-                //.InstancePerLifetimeScope();
+            builder.RegisterType<StudentService>().As<IStudentService>()
+                .InstancePerLifetimeScope();
 
             builder.RegisterType<CourseService>().As<ICourseService>()
                 .InstancePerLifetimeScope();

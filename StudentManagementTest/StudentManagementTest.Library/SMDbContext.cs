@@ -31,7 +31,18 @@ namespace StudentManagementTest.Framework
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-           
+            builder.Entity<StudentRegistration>()
+                 .HasKey(sm => sm.Id);
+
+            builder.Entity<StudentRegistration>()
+                .HasOne(sr => sr.Course)
+                .WithMany(x => x.StudentRegistrations)
+                .HasForeignKey(sr => sr.CourseId);
+
+            builder.Entity<StudentRegistration>()
+                .HasOne(sr => sr.Student)
+                .WithMany(x => x.StudentRegistrations)
+                .HasForeignKey(sr => sr.StudentId);
 
             base.OnModelCreating(builder);
         }

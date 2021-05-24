@@ -11,6 +11,6 @@ namespace StudentManagementTest.Library.Entity
         public string Title { get; set; }
         public int SeatCount { get; set; }
         public int Fee { get; set; }
-        public ICollection<StudentRegistration> StudentRegistrations { get; set; }
+        public IList<StudentRegistration> StudentRegistrations { get; set; }
     }
 }
